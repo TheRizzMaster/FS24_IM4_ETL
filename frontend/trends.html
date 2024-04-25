@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ParkChecker Basel Stadt</title>
 
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/trends.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </head>
 <body>
     
     <header>
         <div class="menuline">
-            <img src="./img/car_logo.svg" alt="Car as a Logo of this Website" width="40px">
+            <a href="./index.html">
+                <img src="./img/car_logo.svg" alt="Car as a Logo of this Website" width="40px">
+            </a>
         </div>
         <div class="hero">
             <div class="herotext">
@@ -22,6 +25,35 @@
             </div>
         </div>
     </header>
+
+    <main>
+
+        <div class="range-select">
+            <input type="radio" id="alle" name="duration" value="alle">
+            <label for="alle">Alle</label>
+
+            <input type="radio" id="1j" name="duration" value="1j">
+            <label for="1j">1 J</label>
+
+            <input type="radio" id="1m" name="duration" value="1m">
+            <label for="1m">1 M</label>
+
+            <input type="radio" id="1w" name="duration" value="1w">
+            <label for="1w">1 W</label>
+
+            <input type="radio" id="24h" name="duration" value="24h" checked>
+            <label for="24h">24 h</label>
+        </div>
+
+        <canvas id="parkingUtilizationChart"></canvas>
+
+
+        <div class="extratext">
+            <h2 id="selection-text" class="heading-4"></h2>
+            <button onclick="window.location.href='./index.html'" id="backButton">Zurück zur Übersicht</button>    
+        </div>
+
+    </main>
 
 
     <footer>
