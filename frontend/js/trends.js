@@ -95,7 +95,7 @@ function updateChartWithFilteredData(timeframe) {
     const filteredData = filterDataByTimeframe(timeframe);
     let sortedData = filteredData.sort((a, b) => new Date(a.published) - new Date(b.published));
     const labels = sortedData.map(entry => new Date(entry.published));
-    const usagePercentages = sortedData.map(entry => Math.max(0, entry.auslastung_prozent));
+    const usagePercentages = sortedData.map(entry => (Math.max(0, entry.auslastung_prozent)).toFixed(2));
 
     parkingUtilizationChart.data.labels = labels;
     parkingUtilizationChart.data.datasets[0].data = usagePercentages;
