@@ -1,13 +1,13 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 let cachedData = [];
-let parkingUtilizationChart = null; // This will hold the chart instance
+let parkingUtilizationChart = null;
 
 document.addEventListener('DOMContentLoaded', async function () {
     await fetchTrendData();
-    setupChart(); // Setup initial empty chart
-    updateChartWithFilteredData('24h'); // Default to '24h' on load
-    updateText('24h'); // Default to '24h' on load
+    setupChart();
+    updateChartWithFilteredData('24h');
+    updateText('24h');
 
     const radioButtons = document.querySelectorAll('input[type="radio"][name="duration"]');
     radioButtons.forEach(radio => {
@@ -69,7 +69,7 @@ function setupChart() {
                     time: {
                         unit: 'hour',
                         displayFormats: {
-                            hour: 'MMM dd, HH:mm'  // Format the hour for better readability
+                            hour: 'MMM dd, HH:mm'
                         },
                         tooltipFormat: 'MMM dd, yyyy HH:mm'
                     },
@@ -80,7 +80,7 @@ function setupChart() {
                 },
                 y: {
                     beginAtZero: true,
-                    suggestedMax: 100,  // Ensure the scale goes up to 100%
+                    suggestedMax: 100,
                     title: {
                         display: true,
                         text: 'Utilization %'
@@ -92,25 +92,19 @@ function setupChart() {
 }
 
 function updateChartWithFilteredData(timeframe) {
-
-    console.log(parkingUtilizationChart.data.datasets[0].data);
-
-
     const filteredData = filterDataByTimeframe(timeframe);
     let sortedData = filteredData.sort((a, b) => new Date(a.published) - new Date(b.published));
     const labels = sortedData.map(entry => new Date(entry.published));
     const usagePercentages = sortedData.map(entry => Math.max(0, entry.auslastung_prozent));
 
     parkingUtilizationChart.data.labels = labels;
-    parkingUtilizationChart.data.datasets[0].data = usagePercentages; // Ensure you are updating the correct dataset
+    parkingUtilizationChart.data.datasets[0].data = usagePercentages;
     parkingUtilizationChart.update();
-
-    console.log(parkingUtilizationChart.data.labels);
 }
 
 function filterDataByTimeframe(timeframe) {
     const now = new Date();
-    let cutoff = now.getTime(); // Default to showing all data
+    let cutoff = now.getTime();
     switch (timeframe) {
         case '24h':
             cutoff -= 24 * 3600 * 1000;

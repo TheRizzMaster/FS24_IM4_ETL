@@ -156,11 +156,17 @@ input[type="radio"]:checked + label {
     padding: 8px 30px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 15px;
     border: none;
     display: inline-block;
     filter: drop-shadow(2px 3px 1px #00000046);
   }
+
+#backButton:hover {
+    background-color: var(--dark-blue);
+    filter: drop-shadow(3px 3px 5px #000000a0);
+    color: white;
+}
 
 .extratext {
     width: 100%;
