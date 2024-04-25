@@ -7,24 +7,26 @@
 
     <link rel="stylesheet" href="./css/style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </head>
 <body>
+    
     <header>
         <div class="menuline">
-            <img src="./img/car_logo.svg" alt="Car as a Logo of this Website" width="50px">
+            <img src="./img/car_logo.svg" alt="Car as a Logo of this Website" width="40px">
         </div>
         <div class="hero">
             <div class="herotext">
                 <h1 class="heading-1">PARKCHECKER BASEL STADT</h1>
-                <p class="heading-3">ÜBERPRÜFEN SIE DIE VERFÜGBARKEIT UND AUSLASTUNGSTRENDS DER PARKHÄUSER IN BASEL</p>
+                <p class="heading-5 bold">ÜBERPRÜFEN SIE DIE VERFÜGBARKEIT UND<br>AUSLASTUNGSTRENDS DER PARKHÄUSER IN BASEL</p>
             </div>
             <div class="lottiecontainer">
                 <dotlottie-player
+                    class="lottie-player"
                     src="./img/lottie/data.json"
                     background="transparent"
                     speed="1"
-                    style="width: 300px; height: 300px"
                     direction="1"
                     playMode="normal"
                     loop
@@ -37,25 +39,17 @@
     <main>
         <div class="info">
             <h2 class="heading-2">PARKHÄUSER IN BASEL</h2>
-            <p class="heading-3">Wählen Sie ein Parkhaus aus der Liste aus, um die aktuelle Auslastung und die Auslastungstrends anzuzeigen.</p>
+            <p class="heading-5">Wählen Sie ein Parkhaus aus der Liste aus, um die Auslastungstrends anzuzeigen.</p>
         </div>
         <div class="controls">
-            <img src="./img/search.svg" alt="Search Icon" width="30px">
-            <input type="text" name="search" id="search" placeholder="Parkhaus suchen">
-            <img src="./img/refresh.svg" alt="Refresh Parking Data" width="30px">
+            <div class="search-box">
+                <img src="./img/search.svg" alt="Search Icon" class="search-icon"> 
+                <input type="text" name="search" id="search" placeholder="Parkhaus suchen">
+            </div>
+            <img src="./img/refresh.svg" alt="Refresh Parking Data" width="30px" class="refresh-icon">
         </div>
         <div id="result">
 
-            <div class="parking-card">
-                <div class="card-header">
-                    <h3 class="heading-4">PARKHAUS CITY</h3>
-                </div>
-                <div class="card-body">
-                    <p><strong>210</strong> Freie Parkplätze</p>
-                    <canvas class="chart"></canvas>
-                    <p><strong>76%</strong> Auslastung</p>
-                </div>
-            </div>
 
         </div>
     </main>

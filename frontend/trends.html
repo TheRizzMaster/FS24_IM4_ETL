@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkChecker Basel Stadt</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+<body>
+    
+    <header>
+        <div class="menuline">
+            <img src="./img/car_logo.svg" alt="Car as a Logo of this Website" width="40px">
+        </div>
+        <div class="hero">
+            <div class="herotext">
+                <h1 class="heading-1">PARKCHECKER <span class="title"></span></h1>
+            </div>
+        </div>
+    </header>
+
+
+    <footer>
+        <p>FHGR PROJECT BY SIRO RUDOLF<br>POWERED BY <a href="https://data.bs.ch/explore/dataset/100088/">DATA.BS.CH</a></p>
+
+        <p id="copyright">©<span id="copyright-year"></span> SIRO RUDOLF</p>
+    </footer>
+
+    <script>
+        const copyrightYear = document.getElementById('copyright-year');
+        const currentYear = new Date().getFullYear();
+        copyrightYear.textContent = currentYear;
+    </script>
+
+    <script src="./js/trends.js"></script>
+</body>
+</html>
