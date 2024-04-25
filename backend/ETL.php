@@ -27,6 +27,11 @@ class DataImporter {
         
         // Über jedes Datenobjekt im Ergebnisarray iterieren
         foreach ($data as $item) {
+
+            // Auslastung-Prozentwert auf 0 setzen, wenn er negativ ist
+            $auslastung = $item['auslastung'] < 0 ? 0 : $item['auslastung'];
+            $auslastung_prozent = $item['auslastung_prozent'] < 0 ? 0 : $item['auslastung_prozent'];
+
             // Variablen als Parameter an die vorbereitete Anweisung binden
             $stmt->bind_param("sssiidddsdsss", 
                 $item['title'], 
@@ -34,8 +39,8 @@ class DataImporter {
                 $item['free'], 
                 $item['total'], 
                 $item['anteil_frei'], 
-                $item['auslastung'], 
-                $item['auslastung_prozent'], 
+                $auslastung,
+                $auslastung_prozent, 
                 $item['link'], 
                 $item['geo_point_2d']['lon'], // Längengrad
                 $item['geo_point_2d']['lat'], // Breitengrad
