@@ -47,7 +47,7 @@ function setupChart() {
             datasets: [{
                 label: 'Parking Utilization (%)',
                 data: [],
-                borderColor: 'rgb(75, 192, 192)',
+                borderColor: 'rgb(51, 71, 85)',
                 tension: 0.1,
             }]
         },
