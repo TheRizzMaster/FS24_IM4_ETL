@@ -1,7 +1,7 @@
 <?php
 
 // Aktiviere CORS (Cross-Origin Resource Sharing) und setze JSON als Inhaltstyp.
-header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: https://im-server.ch");
 header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization, Auth-Token");
 header('Content-Type: application/json');
