@@ -177,6 +177,12 @@ main {
     filter: drop-shadow(2px 2px 5px #000000ba);
 }
 
+.parking-card:hover {
+    background-color: var(--gray-blue);
+    filter: drop-shadow(3px 3px 5px #000000ce);
+    cursor: pointer;
+}
+
 .card-header {
     background-color: var(--dark-blue);
     color: white;
