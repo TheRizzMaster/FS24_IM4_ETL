@@ -51,4 +51,4 @@ https://im-server.ch
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `latest`      | `boolean` | Returns rows, that were fetched in the last hour |
+| `latest`      | `boolean` | returns rows, that were fetched in the last hour |
