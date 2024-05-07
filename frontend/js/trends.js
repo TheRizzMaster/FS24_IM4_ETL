@@ -28,6 +28,11 @@ async function fetchTrendData() {
             }
         });
         cachedData = await response.json();
+
+        if(cachedData.length === 0) {
+            window.location.href = 'index.html';
+        }
+
         const title = document.querySelectorAll('.title');
         for (let i = 0; i < title.length; i++) {
             title[i].textContent = cachedData[0].title;

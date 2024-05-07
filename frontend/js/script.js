@@ -58,7 +58,7 @@ async function processData(data = cachedData) {
         }
 
         result.innerHTML += `
-        <div class="parking-card">
+        <div class="parking-card" data-id="${item.id2}">
             <div class="card-header">
                 <h3 class="heading-4">${item.title}</h3>
             </div>
@@ -75,7 +75,7 @@ async function processData(data = cachedData) {
     // After all DOM updates are complete, create the charts
     data.forEach((item, index) => {
         createChart(index, Math.floor(item.auslastung_prozent));
-        addEventListenerToCard(index);
+        addEventListenerToCard(index, item.id2);
     });
     }
 
@@ -112,10 +112,10 @@ async function processData(data = cachedData) {
     });
 }
 
-function addEventListenerToCard(index) {
+function addEventListenerToCard(index, id) {
     const card = document.querySelector(`#charts-container-${index}`).closest('.parking-card');
     card.addEventListener('click', () => {
-        window.location.href = `./trends.html?id=${cachedData[index].id2}`;
+        window.location.href = `./trends.html?id=${id}`;
     });
 }
 
