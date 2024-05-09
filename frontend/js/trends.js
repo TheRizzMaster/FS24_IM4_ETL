@@ -37,7 +37,7 @@ async function fetchTrendData() {
         for (let i = 0; i < title.length; i++) {
             title[i].textContent = cachedData[0].title;
         }
-        console.log('Data fetched and cached:', cachedData);
+        // console.log('Data fetched and cached:', cachedData);
     } catch (error) {
         console.error('Failed to fetch data:', error);
     }
